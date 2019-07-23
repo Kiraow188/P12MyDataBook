@@ -3,6 +3,7 @@ package sg.edu.rp.c347.p12_mydatabook;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -35,9 +38,14 @@ public class BioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.biofragment, container, false);
 
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        String text = pref.getString("bio", "");
+        if (text.equalsIgnoreCase("")){
 
+        }else{
+            tv.setText(text);
+        }
 
-        tv = view.findViewById(R.id.TextView);
         btn = view.findViewById(R.id.btnEdit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +64,10 @@ public class BioFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         tv.setText(input.getText().toString());
+                        SharedPreferences pref = getContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = pref.edit();
+                        editor.putString("bio", input.getText().toString());
+                        editor.commit();
                     }
                 });
                 alert.show();

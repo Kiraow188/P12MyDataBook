@@ -36,7 +36,7 @@ public class AnniversaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.anniversaryfragment, container, false);
-
+        tv = view.findViewById(R.id.TextView);
         SharedPreferences pref = getContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         String text = pref.getString("anni", "");
         if (text.equalsIgnoreCase("")){
@@ -46,7 +46,7 @@ public class AnniversaryFragment extends Fragment {
         }
 
 
-        tv = view.findViewById(R.id.TextView);
+
         btn = view.findViewById(R.id.btnEdit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
