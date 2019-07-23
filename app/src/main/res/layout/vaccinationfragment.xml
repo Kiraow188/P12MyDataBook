@@ -18,17 +18,4 @@
         android:layout_height="wrap_content"
         android:text="Edit" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:src="@android:drawable/ic_menu_search"
-        android:layout_margin="16dp" />
-
-    </FrameLayout>
 </LinearLayout>

@@ -34,14 +34,7 @@ public class VaccinationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.vaccinationfragment, container, false);
 
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //action
-                Toast.makeText(getContext(), "Hello", Toast.LENGTH_LONG).show();
-            }
-        });
+
 
         tv = view.findViewById(R.id.TextView);
         btn = view.findViewById(R.id.btnEdit);
